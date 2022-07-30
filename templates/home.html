@@ -1,0 +1,819 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<!-- Used for Social Media Tags-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+		
+		<!-- Jquery CDN-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!-- Counter Up CDNJS-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+		<!-- Waypoints CDNJS-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+		<!-- Font Awesome Kit -->
+        <script src="https://kit.fontawesome.com/0d6d81eac4.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts  -->  
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap" rel="stylesheet">
+    
+        <!-- link rel="stylesheet" href="/static/style.css" type="text/css"> -->
+
+        <title>Depression Detection</title>
+        <link rel = "icon" href =  
+        "/static/logo.jpg" 
+            type = "image/x-icon"> 
+
+
+<style>
+
+
+@font-face {
+    font-family: 'Brandon Grotesque Thin Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Brandon Grotesque Thin Italic'), url('brandon-grotesque-thin-italic-58a8a3a8861fe.woff') format('woff');
+}
+
+.file-upload {
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.file-upload__input {
+  display: none;
+}
+
+.btn{
+  word-wrap: break-word;
+}
+
+.file-upload__button {
+  -webkit-appearance: none;
+  background: #fff;
+  width: 140px;
+  height: 40px;
+  border-radius: 4px;
+  outline: none;
+  padding: 0.5em 0.8em;
+  margin-right: 15px;
+  color: black;
+  font-size: 1em;
+  font-family: 'Kanit', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  letter-spacing: 2.5px;
+}
+
+.butt:hover {
+  background-color: black;
+  box-shadow: 0px 15px 20px rgba(197, 191, 191, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.file-upload__button:active {
+  background: #00745d;
+}
+
+.file-upload__label {
+  max-width: 250px;
+  font-size: 0.95em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "Quicksand", sans-serif;
+}
+
+
+.btn btn-light{
+
+  font-size: 8px;
+  display: inline-block;
+
+}
+
+
+
+.img-parallax {
+  width: 100vmax;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+  pointer-events: none
+}
+
+
+td{
+  border-right: 2px solid black;
+}
+
+.btn btn-light{
+  display: inline-block;
+}
+
+#backgrnd{
+ 
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+#para{
+  font-family: 'Bitter', serif; 
+  padding-bottom: 30px; 
+  padding-top:50px; 
+  padding-left:500px;
+  font-size: 35px;
+}
+
+#enterdata{
+  margin:0px auto; 
+  width: 77%; 
+  background-color: #D6EAF8;
+}
+
+#row1{
+  width:100% ; 
+  margin-bottom: 30px;
+  margin-top: 20px;
+
+}
+
+#row2{
+  width: 100%;
+}
+
+#row3{
+  width:100%;
+  margin-top:30px;
+
+}
+
+#row4{
+  width:100% ; 
+  margin-top:30px;
+
+}
+
+#textmain{
+  padding-left: 10px; 
+  font-family: 'Raleway', sans-serif; 
+  font-size: 22px;
+
+}
+
+#butn{
+  width:140px; 
+  height:40px;  
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+padding-left: 3px;
+}
+
+#progress{
+  padding-left: 10px; 
+  font-family: 'Raleway', sans-serif; 
+  font-size: 15px;
+
+}
+
+#depbar{
+  position: relative;
+  padding-left: 100px; 
+  
+  margin-bottom: 30px;
+
+}
+
+#result{
+  margin:0px auto; 
+  width: 75%; 
+  background-color: #82E0AA;
+
+}
+
+#algo{
+  margin-top: 40px; 
+  margin-bottom: 60px;
+}
+
+
+#repdata{
+  margin-top: 40px; 
+  margin-bottom: 60px;
+  margin-right: -300px;
+  margin-left: 0;
+
+}
+
+#end{
+  margin:0px auto; 
+  width: 75%; 
+  background-color: #F5B7B1 ; 
+ 
+
+
+}
+
+#download{
+  margin-bottom: 40px; 
+  margin-top: 40px; 
+  padding-left: 200px;
+
+}
+
+#logout{
+  margin-bottom: 40px; 
+  margin-top: 40px; 
+  padding-left: 150px;
+ 
+
+}
+
+::placeholder{
+  font-family: 'Raleway', sans-serif; 
+  font-size: 0.75em;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  text-align: center;
+
+}
+
+label {
+display: block;
+}
+
+
+#per{
+  
+  position:relative;
+  margin-left: 20em;;
+  margin-inline: 5em;;
+  margin-top: -1.9em;;
+}
+
+
+meter {
+  width: 300px;
+  height: 26px;
+  margin-top: -0.8em;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  position: realtive;
+}
+
+meter::-webkit-meter-bar {
+  background: none; /* Required to get rid of the default background property */
+  background-color: whiteSmoke;
+  box-shadow: 0 5px 5px -5px #333 inset;
+}
+
+meter::-webkit-meter-optimum-value {
+  box-shadow: 0 5px 5px -5px #999 inset;
+  background-image: linear-gradient(
+    90deg, 
+  
+    #719fd1 100%
+  );
+  background-size: 100% 100%;
+}
+
+
+.datarep{
+  display: inline-block;
+  margin-left: 80px;
+ margin-top: 20px;
+}
+
+#reportda{
+  background: white;
+  border-bottom: 2px solid black;
+}
+
+
+@font-face {font-family: "BrandonGrotW01-Light"; src: url("//db.onlinewebfonts.com/t/6dd2f2510b4a00a5461b2455928209c2.eot"); 
+src: url("//db.onlinewebfonts.com/t/6dd2f2510b4a00a5461b2455928209c2.eot?#iefix") format("embedded-opentype"), 
+url("//db.onlinewebfonts.com/t/6dd2f2510b4a00a5461b2455928209c2.woff2") format("woff2"),
+url("//db.onlinewebfonts.com/t/6dd2f2510b4a00a5461b2455928209c2.woff") format("woff"),
+url("//db.onlinewebfonts.com/t/6dd2f2510b4a00a5461b2455928209c2.ttf") 
+format("truetype"), url("//db.onlinewebfonts.com/t/6dd2f2510b4a00a5461b2455928209c2.svg#BrandonGrotW01-Light") format("svg"); }
+</style>
+  
+</head>
+<body>
+
+<!-- Navigation Bar -->
+
+<nav class="navbar navbar-expand-lg navbar navbar-light bg-light navbar sticky-top  " role="navigation" style=" padding: 0.5% 0; font-size: 1.1em;">
+	<a class="navbar-brand" href="#" style="padding-left: 10px;">
+		<img class="img" src="/static/logo.jpg" width="40px" height="40px" class="d-inline-block align-top" alt="">
+	  </a>
+	 
+	<a class="navbar-brand" href="#">Child Depression Prediction</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+	  <ul class=" navbar-nav  ">
+		<li class="nav-item active " style="margin-left: 860px;">
+		  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item">
+			
+		  <a class="nav-link" href="#foot" >Contact</a>
+		
+		</li>
+		
+		
+	  </ul>
+	</div>
+  </nav>
+
+  <!------------------------------------------------1st Row----------------------------------------------------------->
+  
+  
+  
+  
+  
+  
+  <div class="container-fluid " style="width: 100%; background-color:#fff ; ">
+    
+    <div class="row">
+        <div class="col-sm-6">
+          
+           <img src="../static/hand.jpeg"  style="width: 100%; height: 100% ;" >
+
+        </div>
+        <div class="col-sm-6">
+        <p style="font-family: BrandonGrotW01-Light; font-size: 70px; font-weight: 600px; color: black; padding:80px 50px 10px 50px"> PREDICTION OF DEPRESSION</p>
+        </div>
+    </div>
+
+    </div>
+  
+
+
+<!-- -------------------------------------------- 2nd Row -------------------------------------------------->
+<div style="  background: url(/static/bg102.jpeg);
+background-repeat: no-repeat;
+background-size: cover; padding-bottom: 50px;">
+<div class="container-fluid" id="backgrnd">
+
+    <div class="row">
+      <p  id="para" >DEPRESSION PREDICTOR </p>
+	  </div>  
+
+<form action="/main" method="POST" name="main">
+      <div class="row" id="enterdata">
+
+        <div class="row" id="row1" >
+
+          <div class="col-sm-4" >
+            <p id="textmain">
+            Choose Data set (CSV) File
+            </p>
+          </div>
+          <div class="col-sm-4" style="padding-left: 250px;">
+            <div class="wrap">
+            <div class="file-upload">
+              <input class="file-upload__input" type="file" name="csv" size="25" id="myFile" multiple>
+
+              <button class="file-upload__button butt" type="button"><i class="fas fa-plus"></i> UPLOAD</button>
+            
+              <span class="file-upload__label"></span>
+            </div>
+            </div>
+            
+          </div>
+          <div class="col-sm-4">
+            <div style="padding-left: 180px;">
+            <button  class="btn btn-outline-dark"  style="font-size: 16px;" id="butn" type="submit" onclick="return check(this.form)" value="Extract Feature" formaction="/featureextraction" ><span style="font-size: 14px; font-weight: 600;"><i class="fas fa-cogs"  ></i> Extract Features</span></button>
+          </div>
+          </div>
+        
+        </div>
+
+        <div class="row" id="row2" >
+            <div class="col-sm-4">
+              <p id="textmain">
+              Choose the Audio File
+              </p>
+
+            </div>  
+            <div class="col-sm-8" style="padding-left: 250px;">
+              <div class="wrap">
+              <div class="file-upload">
+                <input class="file-upload__input" type="file" name="af" size="25" id="myFile" multiple>
+                <button class="file-upload__button butt" type="button"><i class="fas fa-plus"></i> UPLOAD</button>
+                <span class="file-upload__label"></span>
+              </div>
+            </div>  
+          </div>
+        
+        
+        </div>
+
+        <div class="row" id="row3">
+          <div class="col-sm-4">
+            <p id="textmain">
+            Enter the name of the audio file to be recorded
+          </p>
+          </div>  
+          <div class="col-sm-4" style="padding-left: 250px;">
+            <input type="text" class="form-control" id="exampleInputtext" name="fname" style="width: 140px;background: white; border-bottom: 2px solid black;" placeholder="FILE NAME">
+          </div>  
+          <div class="col-sm-4">
+            <div style="padding-left: 180px;">
+            <button class="btn btn-outline-dark" id="butn" type="submit" onclick="return check(this.form)" value="Record Voice" formaction="/reco" >  <i class="fas fa-microphone-alt"></i>  Record</p></button>
+          </div>  
+          </div>
+      
+      </div>
+
+      <div class="row" id="row4"  >
+        <div class="container" style="padding-left: 45%;">
+        <button class="btn btn-dark " type="submit" onclick="return check(this.form)" value="Predict" formaction="/predict"
+         style="height: 45px; width: 145px;"> <i class="fas fa-cube"></i>   Predict</button>
+      </div>  
+      </div>
+
+      <div class="row" id="row3" >
+      <div class="col-sm-6">
+       
+        <p id="progress" >
+        <b>Progress:</b>
+        {%if message%}
+        <input type="text" class="form-control" size="10" name="res" value="{{ message }}" style="width:150px; background: none;border-bottom: 1px solid black;" readonly/>
+        </p>
+     
+      </div>
+      <div class="col-sm-6" id="depbar">
+
+        {% if message[0] == "Depressed" %}
+        <label for="disk_d"><b>  Depression Level is:</b></label>
+            <meter max="100" id="disk_d" value="{{ message[1]}}"></meter>  
+           <div id = 'per'> <b>{{  message[1]}} % {%else%} </b>
+          <!--   <input type="text" size="10" name="res" value="{{ message }}" style="width:150px; background: none;border-bottom: 1px solid black;" readonly/> -->
+            {%endif%}
+            {% else %}
+             <input type="text" size="10" name="res"/> 
+            {%endif%}
+      </div>
+      </div>
+
+      </div>
+
+
+  </div>
+  <div class="row" id="result" >
+    <p style="font-family: 'Kanit', sans-serif; font-size: x-large; padding-left: 15px; padding-top: 10px;"> RESULT:</p>
+  </div>
+
+
+  <div class="row" id="result" >
+
+  <div class="col-sm-3" id="algo" >
+    <button type="submit" onclick="return check(this.form)" value="LogisticRegression" formaction="/lr" class="btn btn-outline-dark" style="font-weight: 700; border: 3px solid black; border-radius: 0%;">Logistic Regression</button>
+  </div>
+  <div class="col-sm-3"  id="algo">
+    <button  type="submit" onclick="return check(this.form)" value="RandomForest" formaction="/rf" class="btn btn-outline-dark" style="font-weight: 700; border: 3px solid black; border-radius: 0%;" >Random Forest</button>
+  </div>
+  <div class="col-sm-3" id="algo">
+    <button type="submit" onclick="return check(this.form)" value="SVMLinearKernel" formaction="/svmlr" class="btn btn-outline-dark" style="font-weight: 700; border: 3px solid black; border-radius: 0%;">SVM Linear Kernel</button>
+  </div>
+  <div class="col-sm-3" id="algo">
+    <button input type="submit" onclick="return check(this.form)" value="SVMGaussianKernel" formaction="/svmgk" class="btn btn-outline-dark" style="font-weight: 700; border: 3px solid black; border-radius: 0%;">SVM GaussianKernel</button>
+  </div>
+</div>
+
+</form>
+
+
+<div class="row" id="end">
+  
+  <div id="Report">
+
+    <p style="font-family: 'Kanit', sans-serif; font-size: x-large; padding-left: 15px; padding-top: 10px;"> REPORT:</p>
+
+  </div>
+  
+ 
+  <form action="{{url_for('reportpage')}} " method="POST" name="main" style="width: 100%;">
+
+    <div class="datarep">
+      <div class="form-group">
+        <input type="text" style="width: 150px;" class="form-control" placeholder="ENTER ID" id="reportda" aria-describedby="IDhelp" required="required" name="pid" >
+      </div>
+    </div>
+    <div class="datarep">
+      <div class="form-group">
+        <input type="text" style="width: 150px;" class="form-control" placeholder="ENTER NAME " id="reportda" required="required" name="pname" >
+      </div>
+    </div>
+    <div class="datarep">
+      <div class="form-group">
+        <select class="form-control" style="width: 150px;"  id="reportda" name="age"placeholder="Enter Age" >
+          
+          <option> Enter Age</option>
+          <option> 2</option>
+          <option> 3</option>
+          <option> 4</option>
+          <option> 5</option>
+          <option> 6</option>
+          <option> 7</option>
+          <option> 8</option>
+          <option> 9</option>
+          <option> 10</option>
+          <option> 11</option>
+          <option> 12</option>
+      </select>
+      </div>
+    </div>
+    <div class="datarep">
+      <div class="form-group">
+        <input type="text" style="width: 150px;" class="form-control" placeholder="DEPRESSION %" id="reportda" aria-describedby="IDhelp" required="required" name="percent" >
+
+     <!--   <button type="submit"  style="width: 120px;" class="btn btn-primary" value="Add Patient info"> View Report</button>
+    -->  
+    </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div id="download">
+          <button class="btn btn-dark" input type="submit" onclick="return check(this.form)" value="Add Patient info"  >
+            <i class="fas fa-download"></i> View Report</button>
+          
+        </div>
+        </div>
+        
+     
+    
+</form>
+<form action="/main" method="POST" name="main">
+
+  <div class="col-sm-6">
+    <div id="logout">
+    <button input type="submit" class="btn btn-dark" onclick="return check(this.form)" value="Logout" formaction="/logout" style="width: 130px;"><i class="fas fa-sign-out-alt"></i> Logout </button>
+  </div>
+</div>
+</div>
+</form>
+
+</div>
+
+</div>
+</div>
+  
+ <!--
+<div class="col-sm-6">
+<div id="download">
+  <button class="btn btn-dark" input type="submit" onclick="return check(this.form)" value="Download" formaction="/download" >
+    <i class="fas fa-download"></i> Download</button>
+  
+</div>
+</div>
+
+  <div class="col-sm-6">
+    <div id="logout">
+    <button input type="submit" class="btn btn-dark" onclick="return check(this.form)" value="Logout" formaction="/logout" ><i class="fas fa-sign-out-alt"></i> Logout </button>
+  </div>
+</div>
+-->
+<!--</form> -->
+
+
+
+<!-------------------------------------------------------  footer ------------------------------------------------------------------>
+<div id="foot">
+<footer class="container-fluid text-center" style="width: 100%; background-color: #23415c ; padding:2% 5% 1% 5%; color: #fff; ">
+	<div class="row">
+	<div class ="col-sm-4">
+    
+		<h3> Contact Us</h3>
+		<br>
+		<ul>
+			<li style="text-align: left; font-weight: 400;"> <span > RNS Institute of Technology,
+				 Dr. Vishnuvardhana Road, Channasandra, RR Nagar,Bengaluru - 560 098.
+				 </span></li>
+			<li style="text-align: justify;font-weight: 400;"> <span >+91 9906543372</span></li>
+			<li style="text-align: justify;font-weight: 400;" > <span >vtu.rnsit@gmail.com</span></li>
+		  </ul>
+	</div>
+	<div class ="col-sm-4">
+		</div>
+	<div class ="col-sm-4">
+		<h3>Have Questions?</h3>
+		<br>
+		<h6 style="text-align: left;">Send a message</h6>
+		<form>
+		<div class="input-group">
+			<textarea class="form-control" aria-label="With textarea" placeholder="Enter text here"></textarea>
+
+		  </div>
+		 
+		  <button type="reset" class="btn btn-primary btn-sm" style="margin-left:320px;">Submit</button> 
+		</form>	
+		</div>
+  </div>
+</div>
+</footer>
+
+
+
+
+<!-- ..................................Original Code.................................................-->
+<!--
+<h2><center><font color="#FFFFF" size=6>Giving Voice to Vulnerable Child Depression Prediction</font></center></h2>
+
+</br>
+</br>
+</br>
+</br>
+
+</br>
+</br>
+
+
+	   
+
+<form action="/main" method="POST" name="main">
+<table width="100%" bgcolor="FFFFFF" align="center">
+
+<tr>
+<td colspan=3><center><font size=6><b>Depression Prediction</b></font></center></td>
+</tr>
+
+
+
+<tr>
+<td>Choose Dataset (CSV) File:</td>
+<td><input type="file" size=25 name="csv"/></td>
+<td></td>
+</tr>
+<tr>
+    <td>Enter the file name to record audio:</td>
+    <td><input type="text" name="fname"/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Choose Audio File:</td>
+    <td><input type="file" size=25 name="af"/></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Result</td>
+    {%if message%}
+    <td><input type="text" size="10" name="res" value="{{ message }}" readonly/></td>
+    
+		{% if message[0] == "Depressed" %}
+        <td><label for="disk_d">Depression Level is:</label>
+            <meter max="100" id="disk_d" value="{{ message[1]}}"></meter>{{ message[1]}} %</td>
+        {%else%}
+        <td><input type="text" size="10" name="res" value="{{ message }}" readonly/></td>
+        {%endif%}
+    {% else %}
+    <td><input type="text" size="10" name="res"/></td>
+    {%endif%}
+
+
+</tr>
+
+<tr>
+<td><input type="submit" onclick="return check(this.form)" value="Extract Feature" formaction="/featureextraction"/></td>
+<td><input type="submit" onclick="return check(this.form)" value="LogisticRegression" formaction="/lr" ></td>
+</tr>
+<tr>
+<td><input type="submit" onclick="return check(this.form)" value="RandomForest" formaction="/rf" ></td>
+<td><input type="submit" onclick="return check(this.form)" value="SVMLinearKernel" formaction="/svmlr" ></td>
+</tr>
+<tr>
+<td><input type="submit" onclick="return check(this.form)" value="SVMGaussianKernel" formaction="/svmgk" ></td>
+<td><input type="submit" onclick="return check(this.form)" value="Record Voice" formaction="/reco" ></td>
+</tr>
+<tr>
+<td><input type="submit" onclick="return check(this.form)" value="Predict" formaction="/predict" ></td>
+<td ><input type="submit" onclick="return check(this.form)" value="Download" formaction="/download" ></td>
+
+</tr>
+<tr>
+    <td colspan="2"><input type="submit" onclick="return check(this.form)" value="Logout" formaction="/logout" ></td>   
+
+</tr>
+
+
+</table>
+</form>
+-->
+<!--------------------- script for Upload button ----------------------------------->
+<script>
+    // Add the following code if you want the name of the file appear on select
+    $(".custom-file-input").on("change", function() {
+      var fileName = $(this).val().split("\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+    </script>
+
+<!-- ------------------- Script for Upload with file name--------------------------   -->
+    <script>
+Array.prototype.forEach.call(
+  document.querySelectorAll(".file-upload__button"),
+  function(button) {
+    const hiddenInput = button.parentElement.querySelector(
+      ".file-upload__input"
+    );
+    const label = button.parentElement.querySelector(".file-upload__label");
+    const defaultLabelText = " ";
+
+    // Set default text for label
+    label.textContent = defaultLabelText;
+    label.title = defaultLabelText;
+
+    button.addEventListener("click", function() {
+      hiddenInput.click();
+    });
+
+    hiddenInput.addEventListener("change", function() {
+      const filenameList = Array.prototype.map.call(hiddenInput.files, function(
+        file
+      ) {
+        return file.name;
+      });
+
+      label.textContent = filenameList.join(", ") || defaultLabelText;
+      label.title = label.textContent;
+    });
+  }
+);
+
+
+$('.img-parallax').each(function(){
+  var img = $(this);
+  var imgParent = $(this).parent();
+  function parallaxImg () {
+    var speed = img.data('speed');
+    var imgY = imgParent.offset().top;
+    var winY = $(this).scrollTop();
+    var winH = $(this).height();
+    var parentH = imgParent.innerHeight();
+
+
+    // The next pixel to show on screen      
+    var winBottom = winY + winH;
+
+    // If block is shown on screen
+    if (winBottom > imgY && winY < imgY + parentH) {
+      // Number of pixels shown after block appear
+      var imgBottom = ((winBottom - imgY) * speed);
+      // Max number of pixels until block disappear
+      var imgTop = winH + parentH;
+      // Porcentage between start showing until disappearing
+      var imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
+    }
+    img.css({
+      top: imgPercent + '%',
+      transform: 'translate(-50%, -' + imgPercent + '%)'
+    });
+  }
+  $(document).on({
+    scroll: function () {
+      parallaxImg();
+    }, ready: function () {
+      parallaxImg();
+    }
+  });
+});
+
+    </script>
+
+<!----------------------------------------Bootstrap script --------------------------------------------------------------->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>

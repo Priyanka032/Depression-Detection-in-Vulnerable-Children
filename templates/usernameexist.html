@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<!-- Used for Social Media Tags-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<link rel="stylesheet" href="https://drive.google.com/file/d/1-ADGXAHQ4oObf6BXTWFCJQC3y60CEBUz/view?usp=sharing" type="text/css">
+		
+		<!-- Jquery CDN-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!-- Counter Up CDNJS-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+		<!-- Waypoints CDNJS-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+		<!-- Font Awesome Kit -->
+		<script src="https://kit.fontawesome.com/0d6d81eac4.js" crossorigin="anonymous"></script>
+	  <title>Error</title>
+	  <!-- add icon link -->
+	  <link rel = "icon" href =  
+	  "/static/logo.jpg" 
+			  type = "image/x-icon"> 
+    </head>
+   <body>
+
+      <!-- ------------------------------------------------Navigation Bar -------------------------------------------------------->
+
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbar sticky-top " role="navigation" style=" padding: 0.5% 0; font-size: 1.1em;">
+	<a class="navbar-brand" href="#" style="padding-left: 10px;">
+		<img class="img" src="/static/logo.jpg" width="40px" height="40px" class="d-inline-block align-top" alt="">
+	  </a>
+	 
+	<a class="navbar-brand" href="#">Child Depression Prediction</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+	  <ul class=" navbar-nav  ">
+		<li class="nav-item active " style="margin-left: 870px;">
+		  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      
+		<li class="nav-item">
+		  <a class="nav-link" href="#contact">Contact</a>
+		</li>
+		
+	  </ul>
+	</div>
+  </nav>
+
+
+  <!-- ------------------------------------------------Alert Icon-------------------------------------------------------->
+
+      <i class="fas fa-exclamation-triangle" style="font-size: 200px;padding-left: 580px; padding-top: 100px; color: orange;"></i>
+
+<p style="text-align: center; font-size: 20px; padding: 3px 0 0 35px; color: gray;">Uh Oh!</p>
+
+ <!-- ------------------------------------------------  Alert Text   ------------------------------------------------------->
+<div class="container">
+   <div class="row">
+      <div class="col" style="padding-left: 220px; padding-right: 200px; padding-top: 5px;">
+
+         <div class="alert alert-warning" role="alert" >
+            UserName Already Exists!
+          </div>
+
+      </div>
+   </div>
+</div>
+
+<!-- ------------------------------------------------  Register Again Button  ------------------------------------------------------->
+    
+<div class="container">
+   <div class="row">
+      <div class="col-md-6">
+         <div class="container" style="padding-left: 400px; padding-bottom: 60px;padding-top: 10px;">
+         <form action="/registerpage" method="POST">
+            <button type="submit" class="btn btn-outline-secondary btn-sm" value="Register Again" style=" width:150px;border-radius:50px; height:40px; margin-left:20px;">Register Again</button>
+         </form>
+      </div>
+      </div>
+      <div class="col-md-6">
+         <div class="container" style="padding-bottom: 60px;padding-top: 10px;">
+         <form action="/loginpage" method="POST">
+            <button type="submit" class="btn btn-outline-primary btn-sm" value="Login" style=" width:150px;border-radius:50px; height:40px; margin-left:20px;">Login</button>
+         </form>
+      </div>
+      </div>
+   </div>
+</div>
+
+
+<!-- ----------------------------------------- FOOTER --------------------------------------------------------   -->
+
+<footer class="container-fluid text-center" style="width: 100%; background-color: #23415c ; padding:2% 5% 1% 5%; color: #fff; ">
+	<div class="row">
+	<div class ="col-sm-4">
+      <a name="contact">
+		<h3> Contact Us</h3>
+		<br>
+		<ul>
+			<li style="text-align: justify;"> <span > RNS Institute of Technology,
+				 Dr. Vishnuvardhana Road, Channasandra, RR Nagar,Bengaluru - 560 098.
+				 </span></li>
+			<li style="text-align: justify;"> <span >+91 9906543372</span></li>
+			<li style="text-align: justify;" > <span >vtu.rnsit@gmail.com</span></li>
+        </ul>
+      </a>
+	</div>
+	<div class ="col-sm-4">
+		</div>
+	<div class ="col-sm-4">
+		<h3>Have Questions?</h3>
+		<br>
+		<h6 style="text-align: left;">Send a message</h6>
+		<form>
+		<div class="input-group">
+			<textarea class="form-control" aria-label="With textarea" placeholder="Enter text here"></textarea>
+
+		  </div>
+		 
+		  <button type="reset" class="btn btn-primary btn-sm" style="margin-left:320px;">Submit</button> 
+		</form>	
+		</div>
+
+</div>
+</footer>
+
+
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   </body>
+</html>

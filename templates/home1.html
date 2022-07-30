@@ -1,0 +1,291 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Used for Social Media Tags-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://drive.google.com/file/d/1-ADGXAHQ4oObf6BXTWFCJQC3y60CEBUz/view?usp=sharing" type="text/css">
+
+    <!-- Jquery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Counter Up CDNJS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+    <!-- Waypoints CDNJS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/0d6d81eac4.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+    <title>Add Patient Information</title>
+     <!-- add icon link -->
+		 <link rel = "icon" href =  
+		 "/static/logo.jpg" 
+				 type = "image/x-icon"> 
+
+    <style>
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        form{
+            text-align:center;
+        }
+        h2,h3{
+            text-align:center;
+            color:white;
+			font-family:Modak, blockquote, cursive;
+
+        }
+		#foralgn{
+		left:50%;
+		}
+		
+        #heading{
+            font-size: 25px;
+            font-family: 'Bitter', serif; 
+            letter-spacing: 2px; 
+            font-weight: 500;
+            padding-left: 25px;
+            padding-bottom: 20px;
+        }
+		
+		
+    </style>
+</head >
+
+        <body>
+
+            <!-- Nav Bar  -->
+		
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbar sticky-top " role="navigation" style=" padding: 0.5% 0; font-size: 1.1em;">
+	<a class="navbar-brand" href="#" style="padding-left: 10px;">
+		<img class="img" src="/static/logo.jpg" width="40px" height="40px" class="d-inline-block align-top" alt="">
+	  </a>
+	 
+	<a class="navbar-brand" href="#">Child Depression Prediction</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+	  <ul class=" navbar-nav  ">
+		<li class="nav-item active " style="margin-left: 850px;">
+		  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="#foot">Contact</a>
+		</li>
+	  </ul>
+	</div>
+  </nav>
+        
+  <!---------------------------------------->
+
+  <div id="home1" style="background: url(/static/addinfobg.jpg) no-repeat center center fixed ;
+        height:100%; position:relative; width: 100%; background-size: cover; ">
+               
+			  		<br><br><br>
+					<div class="col-12 col-sm-6 col-md-4 " style="margin-left:33%;">
+						<div id="foralgn" >
+                            <div class="form-container" style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0px 0px 30px 0px;">
+                                <p id="heading"> ADD PATIENT DETAILS</p>
+
+
+
+						<!--		<form action="{{url_for('reportpage')}} " method="POST" name="main">
+                           -->     
+                           <form action="/patreg " method="POST" name="main">
+                                
+                                    <div class="form-group" style="margin-bottom: 20px;">
+                                    <label for="Input Patient ID" style="margin-right: 78%; font-family: 'Poppins', sans-serif;">Patient ID</label>
+                                    <input type="text"  class="form-control" id="Input Patient ID" aria-describedby="IDhelp" required="required" name="pid" style="background: none; border: none; outline: none; border-bottom: 1px solid #000; border-radius: 0; height: 30px;">
+                                    <small id="IDhelp" class="form-text text-muted" style="margin-right: 40%; padding-right: 60px; opacity: 80%;" > ID must only be a number</small>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 20px;">
+                                    <label for="Patient Name" style="margin-right: 68%; font-family: 'Poppins', sans-serif;">Patient Name</label>
+                                    <input type="text" class="form-control" id="Patient Name" required="required" name="pname" style="background: none; border: none; outline: none; border-bottom: 1px solid #000; border-radius: 0; height: 30px;">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 20px;">
+                                    <label for="Age" style="margin-right: 78%; font-family: 'Poppins', sans-serif;"> Enter Age</label>
+                                    <select class="form-control" id="Age" name="age" style="background: none; border: none; outline: none; border-bottom: 1px solid #000; border-radius: 0; height: 33px;">
+                                        
+                                        <option> Select</option>
+                                        <option> 2</option>
+                                        <option> 3</option>
+                                        <option> 4</option>
+                                        <option> 5</option>
+                                        <option> 6</option>
+                                        <option> 7</option>
+                                        <option> 8</option>
+                                        <option> 9</option>
+                                        <option> 10</option>
+                                        <option> 11</option>
+                                        <option> 12</option>
+                                    </select>
+                                </div>
+                        <div>
+                                    <label for="Gender" style="padding-right: 10px; font-family: 'Poppins', sans-serif;"> Select Gender :    </label>
+
+                                    <div class="custom-control custom-radio custom-control-inline" style="padding-right:5px;">
+                                        <input type="radio" id="customRadioInline1" name="g1" value="Male" class="custom-control-input" >
+                                        <label class="custom-control-label" for="customRadioInline1" style=" font-family: 'Poppins', sans-serif;"> Male</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="customRadioInline2" name="g1" value="Female" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadioInline2" style=" font-family: 'Poppins', sans-serif;"> Female</label>
+                                    </div>
+                                </div>
+                         
+                                <div class="col-auto">
+                               <div class="butn" style="padding-top: 15px;">
+                                 
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                    <button type="reset" class="btn btn-outline-dark" value="Clear" style="width: 140px;" > Clear</button>
+                                </div>
+                               <div class="col-sm-6">
+                             <form action="/patreg " method="POST" name="main">
+
+
+                                    <button type="submit" class="btn btn-primary" value="Add Patient info"> Add Patient Info</button>
+                               </form>    
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            </form>
+                        </div>
+						</div>
+                    </div>
+					
+      </div>
+
+<div id="foot">
+<footer class="container-fluid text-center" style="width: 100%; background-color: #23415c ; padding:2% 5% 1% 5%; color: #fff; ">
+	<div class="row">
+	<div class ="col-sm-4">
+		<h3> Contact Us</h3>
+		<br>
+		<ul>
+			<li style="text-align: justify;"> <span > RNS Institute of Technology,
+				 Dr. Vishnuvardhana Road, Channasandra, RR Nagar,Bengaluru - 560 098.
+				 </span></li>
+			<li style="text-align: justify;"> <span >+91 9906543372</span></li>
+			<li style="text-align: justify;" > <span >vtu.rnsit@gmail.com</span></li>
+		  </ul>
+	</div>
+	<div class ="col-sm-4">
+		</div>
+	<div class ="col-sm-4">
+		<h3>Have Questions?</h3>
+		<br>
+		<h6 style="text-align: left;">Send a message</h6>
+		<form>
+		<div class="input-group">
+			<textarea class="form-control" aria-label="With textarea" placeholder="Enter text here"></textarea>
+
+		  </div>
+		 
+		  <button type="reset" class="btn btn-primary btn-sm" style="margin-left:320px;">Submit</button> 
+		</form>	
+		</div>
+
+</div>
+</footer>
+</div>
+</body >
+</html>
+
+<!-- ------------------------------------------original code-------------------------------------------------------------------------------------------
+        <!DOCTYPE html >
+        <html >
+        <head >
+
+        <link rel="stylesheet" href="/static/style.css" type="text/css" >
+
+
+        </head >
+
+
+        <h2 > <center > <font color="#FFFFF" size=6 > Giving Voice to Valnurable Child Depression Prediction</font > </center > </h2 >
+
+        </br >
+        </br >
+        </br >
+        </br >
+
+        </br >
+        </br >
+
+
+
+
+        <form action="/patreg" method="POST" name="main" >
+        <table width="100%" bgcolor="FFFFFF" align="center" >
+
+        <tr >
+        <td colspan=3 > <center > <font size=6 > <b > Depression Prediction</b > </font > </center > </td >
+        </tr >
+
+
+
+        <tr >
+        <td > Enter Patient ID:</td >
+        <td > <input type="text" size=25 name="pid" required="required"/ > </td >
+
+        </tr >
+        <tr >
+        <td > Enter the Patient Name</td >
+        <td > <input type="text" name="pname" required="required"/ > </td >
+
+        </tr >
+        <tr >
+        <td > Choose Age:</td >
+        <td > <select name="age" >
+        <option value="2" > 2</option >
+        <option value="3" > 3</option >
+        <option value="4" > 4</option >
+        <option value="5" > 5</option >
+        <option value="6" > 6</option >
+        <option value="7" > 7</option >
+        <option value="8" > 8</option >
+        <option value="9" > 9</option >
+        <option value="10" > 10</option >
+        <option value="11" > 11</option >
+        <option value="12" > 12</option >
+        </select > </td >
+        <td > </td >
+        </tr >
+        <tr >
+        <td > Gender</td >
+        <td >
+        <input type="radio" name="g1" value="Male" > Male <input type="radio" name="g1" value="Female" > Female
+        </td >
+
+
+        </tr >
+
+        <tr >
+        <td > <input type="submit" value="Add Patient info" / > </td >
+        <td > <input type="reset" value="Clear" / > </td >
+        </tr >
+
+
+        </table >
+        </form >
+
+        </body >
+        </html >
+        >

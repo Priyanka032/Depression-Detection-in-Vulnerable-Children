@@ -1,0 +1,389 @@
+<html>
+    <head>
+        <title> Report</title>
+        <!-- add icon link -->
+		 <link rel = "icon" href =  
+		 "/static/logo.jpg" 
+                 type = "image/x-icon"> 
+         <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+         <link href="https://fonts.googleapis.com/css2?family=Muli:wght@500&family=Nunito:wght@700;800;900&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet"> 
+
+
+
+
+<style>
+
+
+
+#outerbox{
+    border: 15px solid lightgrey;
+    box-shadow: 0px 0px 5px 0px;
+    padding: 20px;
+    max-width: 800px;
+    width: 80%;
+    margin:20px auto;
+    background-color: white;
+  
+}
+
+.img{
+    padding-left:50% ;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+#headertext{
+    font-family: 'Bitter', serif; 
+    letter-spacing: 2px; 
+    font-weight: 400;
+    font-size: 28px;
+    margin-top: 2px;
+    margin-left: 50px;
+    margin-bottom: 5px;
+}
+
+#address{
+    font-family: 'Bitter', serif; 
+    letter-spacing: 1px; 
+    margin-left: 85px;
+    margin-top: 0;
+    opacity: 70%;
+}
+
+.patientinfo{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.p1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin-left: 60px;
+    letter-spacing: 0.5px;
+}
+
+#heading{
+    font-family: 'Muli', sans-serif;
+    letter-spacing: 1px; 
+    font-size: 18px;
+    margin-top: 25px;
+    margin-left: 30px;
+font-weight: 600;
+color: #2c3e50;
+}
+
+meter {
+  width: 300px;
+  height: 26px;
+  margin-top: -0.8em;
+  margin-left: 190px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  position: realtive;
+}
+
+meter::-webkit-meter-bar {
+  background: none; /* Required to get rid of the default background property */
+  background-color: whiteSmoke;
+  box-shadow: 0 5px 5px -5px #333 inset;
+}
+
+meter::-webkit-meter-optimum-value {
+  box-shadow: 0 5px 5px -5px #999 inset;
+  background-image: linear-gradient(
+    90deg, 
+  
+    #719fd1 100%
+  );
+  background-size: 100% 100%;
+}
+
+
+
+#per{
+  
+  position: absolute;;
+  margin-left: 30em;;
+  margin-inline: 5em;;
+  margin-top: -1.5em;;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+
+}
+
+#text{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+
+}
+
+.box{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border: 2px solid black;
+
+    padding: 20px;
+    width: 60%;
+    margin:40px auto;
+}
+
+.graph{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#graphtitle{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    
+
+}
+
+.diagnosis{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#diagtitle{
+    font-size: 17px;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 1px;
+    padding-left: 150px;
+    color: #006cb4;
+    font-weight: 800;
+
+}
+
+#diagbody{
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 15px;
+}
+
+    </style>
+                 
+
+    </head>
+
+
+
+<body>
+
+
+
+<div class="contanier" id="outerbox">
+
+    <!-- -------------------------  Header---------------------------------->
+<div class="mainheader">
+    <div class="header">
+            <div id="head">
+                <img class="img" src="/static/logo.jpg" width="60px" height="60px" class="d-inline-block align-top" alt="">
+            </div>
+            <div  id="head">
+                <p id="headertext"> CHILD DEPRESSION REPORT</p>
+                <small id="address"> RNS Institute of Technology, Bengaluru - 560098</small>
+            </div>
+        
+
+        </div>
+            <hr style="margin-top: 20px;">
+    </div>
+
+    <!-----------------------------Patient Info--------------------------->
+
+    <div class="patient">
+        <P id="heading">PERSONAL INFO :</P>
+        <div class="patientinfo">
+        <div class="p1">
+            <span >Patient ID :{{pid}}</span><br>
+            <span>Patient Name: {{pname}}</span>
+        
+        </div>
+        <div class="p1">
+        <span>Patient Age: {{age}}</span><br>
+        <span>Patient Gender: Male</span>
+    </div>
+    </div>
+    </div>
+
+    <!--------------------------Depression Bar-------------------->
+    <div class="percent">
+        <p id="heading"> YOUR DEPRESSION DISGNOSIS IS :</p>
+
+        <label for="disk_d"><p class="p1">Depression Level is:</p></label>
+        <br>
+            <meter max="100" id="disk_d" value="{{ percent}}"></meter>  
+            <div id = 'per'> <b>{{  percent}} %  </b>
+    </div>
+    </div>
+
+    <div class="box">
+        <div class="p1" style="letter-spacing: 1px;  font-size: 14px; ">
+            <div style="margin-bottom: 2px;">0 - 35% : Normal</div><br>
+            <span> 36% - 50% : Acute </span>
+        </div>
+        <div class="p1" style="letter-spacing: 1px;  font-size: 14px; ">
+            <div style="margin-bottom: 2px;"> 51% - 75% : Moderate</div><br>
+            <span> 76% - 100% : High</span>
+        </div>
+
+    </div>
+
+    <!---------------------------------- GRAPHS ----------------------------->
+    <div class="maingraph">
+
+        <p id="heading"> ALGORITHM BASED REPRESENTATION OF DEPRESSION :</p>
+    <div class="graph">
+       
+        <div class="algo" style="padding-right: 300px;">
+            <img class="img"  src="/static/linearreg.png " width="300px" height="300px" class="d-inline-block align-top" alt="">
+  
+        </div>
+        <div class="algo" style="padding-right: 300px;">
+            <img class="img" src="/static/randomfor.png" width="300px" height="300px" class="d-inline-block align-top" alt="">
+            
+        </div>
+        <div class="algo" style="padding-left: 150px; padding-top: -5px;"> 
+            <p id="graphtitle">Logistic Regression</p>
+        </div>
+        <div class="algo" style="padding-left: 150px;">
+            <p id="graphtitle" >Random Forest</p>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+
+<!-- -------------------- PAGE 2------------------>
+<div class="contanier" id="outerbox">
+
+    <!----------------- HEADER---------------->
+    <div class="mainheader">
+        <div class="header">
+                <div id="head">
+                    <img class="img" src="/static/logo.jpg" width="60px" height="60px" class="d-inline-block align-top" alt="">
+                </div>
+                <div  id="head">
+                    <p id="headertext"> CHILD DEPRESSION REPORT</p>
+                    <small id="address"> RNS Institute of Technology, Bengaluru - 560098</small>
+                </div>
+            
+    
+            </div>
+                <hr style="margin-top: 20px;">
+        </div>
+
+        <!-- -------------------------GRAPHS CONTD------------------ -->
+    <div class="graph">
+       
+        <div class="algo" style="padding-right: 300px; padding-top: 10px;">
+            <img class="img"  src="/static/svggaussian.png " width="300px" height="300px" class="d-inline-block align-top" alt="">
+  
+        </div>
+        <div class="algo" style="padding-right: 300px;  padding-top: 10px;">
+            <img class="img" src="/static/svm.png" width="300px" height="300px" class="d-inline-block align-top" alt="">
+            
+        </div>
+        <div class="algo" style="padding-left: 132px; padding-top: -5px;"> 
+            <p id="graphtitle">SVM Gaussian Kernal</p>
+        </div>
+        <div class="algo" style="padding-left: 150px;">
+            <p id="graphtitle" >SVM Linear Kernal</p>
+        </div>
+    </div>
+
+    <!---------------------DIAGNOSIS---------------------------->
+
+    <div class="maindiag">
+        <p id="heading"> DIAGNOSIS AND WHAT IT MEANS :</p>
+
+        <div class="diagnosis">
+
+
+            <div class="diag">
+                <p id="diagtitle">NORMAL</p>
+                <p id="diagbody" style="padding-left: 40px;">
+                    In order to maintain a good mental health of your child:
+                    <ul id="diagbody" style="padding-left: 40px;" >
+                        <li> Teach your kids the “language of feelings”.</li>
+                        <li> Learn to put yourself in your child’s shoes.</li>
+                        <li> Be aware of your child’s overall actions and behaviour. </li>
+                        <li> Encourage creativity</li>
+                        <li> Show kids that having a mix of struggle and strength is normal for everyone.</li>
+                    </ul>
+                </p>
+            </div>
+
+
+            <div class="diag">
+               <p id="diagtitle" style="padding-left: 170px;"> ACUTE</p>
+                <p id="diagbody" style="padding-left: 40px;">
+                    Initial stages of depression and your child can be recovered by:
+                    <ul id="diagbody" style="padding-left: 40px;"> 
+                        <li>Parental help is the key:<br>
+                            Have a warm, open relationship with your children which help to see what is causing them the trouble.
+                            Prioritize on their feelings and ample amount of attention is to be given.</li>
+                      <li>Practical help
+                        only if the child seeks for it.</li>
+                      
+                    </ul>
+                </p>
+            </div>
+
+
+            <div class="diag">
+                <p id="diagtitle">MODERATE</p>
+            <p id="diagbody" style="padding-left: 40px;" >
+                <ul id="diagbody" style="padding-left: 40px;">
+                    <li>Parental help is a must.</li>
+                    <li>Professional help:<br>
+                        If your child is having problems at school, a teacher, school nurse, school counsellor or educational psychologist may be able to help. </li>
+                    <li>Talking it through:<br>
+                        Assessments and treatments for children and young people with mental health problems put a lot of emphasis on talking and on understanding the problem in order to work out the best way to tackle it.</li>
+                </ul>
+            </p>
+            </div>
+
+
+            <div class="diag">
+                <p id="diagtitle" style="padding-left: 170px;">HIGH</p>
+            <p id="diagbody" style="padding-left: 40px;">
+                <ul id="diagbody" style="padding-left: 40px;">
+                    <li>Medication:<br>
+                        Children need to be assessed by a specialist before they are prescribed any drugs. 
+                        There is a lot of evidence that talking therapies can be effective for children, but drugs may be also help in some cases.</li>
+                    <li> Parental help is neccessary.</li>
+                    <li>Professional help also plays a vital role.</li>
+               
+                    </ul>
+
+            </p>
+            
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+<form action="/logout" method="POST" style="padding: 10px 1000px 5px;">
+    <button type="submit" class="btn btn-light btn-sm" value="Login"  style="width:100px;border-radius:50px; height:30px;">LOGOUT</button>
+</form>

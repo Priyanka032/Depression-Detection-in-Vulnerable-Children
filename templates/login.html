@@ -1,0 +1,828 @@
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<!-- Used for Social Media Tags-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<link rel="stylesheet" href="https://drive.google.com/file/d/1-ADGXAHQ4oObf6BXTWFCJQC3y60CEBUz/view?usp=sharing" type="text/css">
+		
+		<!-- Jquery CDN-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!-- Counter Up CDNJS-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+		<!-- Waypoints CDNJS-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+		<!-- Font Awesome Kit -->
+		<script src="https://kit.fontawesome.com/0d6d81eac4.js" crossorigin="anonymous"></script>
+
+		<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+		
+		<title>Depression Detection</title>
+
+		 <!-- add icon link -->
+		 <link rel = "icon" href =  
+		 "/static/logo.jpg" 
+				 type = "image/x-icon"> 
+
+<style>
+
+	html{
+		scroll-behavior: smooth;
+	}
+
+
+
+.file-upload__button {
+  -webkit-appearance: none;
+  background: whitesmoke;
+  width: 160px;
+  height: 40px;
+  border-radius: 4px;
+  outline: none;
+  padding: 0.5em 0.8em;
+  margin-right: 15px;
+  color: black;
+  font-size: 1em;
+  font-family: 'Kanit', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  letter-spacing: 2.5px;
+}
+
+.butt:hover {
+  background-color: black;
+  box-shadow: 0px 15px 20px rgba(167, 162, 162, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.cardhov:hover{
+	box-shadow: 0px 15px 20px rgba(88, 87, 87, 0.9);
+  	transform: translateY(-7px);
+
+}
+
+#main{
+	margin: 0 ;
+	padding:0;
+	box-sizing: border-box;
+	height: 80%;
+	width: 100%;
+}
+.slider{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to left, #000000, #000033);
+	z-index: -1;
+
+}
+
+section{
+	display: flex;
+	width: 100%;
+	height: 90vh;
+	justify-content: center;
+	align-items: center;
+	
+
+	
+}
+.hero{
+	height:80%;
+	width: 100%;
+
+}
+
+.hero img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.headline{
+	position: absolute;
+	top: 40%;
+	left: 27%;
+	font-size: 50px;
+	transform: translate(-20%,-70%);
+	color: white;
+	text-align: center;
+	font-family: 'Acme', sans-serif;
+}
+
+
+.scrolldown{
+	position: absolute;
+	bottom:10px;
+	left:47%;
+	width: 35px;
+	height: 35px;
+	transform: translateY(-80px); 
+	transform: translateX(-50);
+	transform: rotate(45deg);
+	
+	
+	z-index: 3;
+}
+
+.scrolldown span{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height:100%;
+	border-bottom: 2px solid #fff;
+	border-right: 2px solid #fff;
+	animation: animate 1.5s linear infinite;
+	opacity: 0;
+}
+
+.scrolldown span:nth-child(1)
+{
+	transform: translate(-15px,-15px);
+	animation-delay: -0.4s;
+}
+.scrolldown span:nth-child(2)
+{
+	transform: translate(0,0);
+	animation-delay: -0.2s;
+}
+.scrolldown span:nth-child(3)
+{
+	transform: translate(15px,15px);
+	animation-delay: 0s;
+}
+
+@keyframes animate {
+	0%{
+		top: -5px;
+		left: -5px;
+		opacity: 0;
+	}
+	25%{
+		top: 0px;
+		left: 0px;
+		opacity: 1;
+	}
+	50%,100%{
+		top: 5px;
+		left: 5px;
+		opacity: 0;
+	}
+	
+}
+
+.text1{
+	letter-spacing: 6px;
+	animation: text 4.5s 1;;
+}
+
+.getstart{
+	position: absolute;
+	top:70%;
+	left:40%;
+	transform: translate(-20%,-70%);
+
+}
+
+@keyframes text {
+	0%{
+		color: #000000;
+		margin-bottom: -20px;
+	}
+	30%{
+		letter-spacing: 25px;
+		margin-bottom: -20px;
+	}
+	85%{
+		letter-spacing: 6px;
+		margin-bottom: -20px;
+	}
+}
+
+.get{
+	border: 2px solid #fff;
+	font-weight: bold;
+	font-family: 'Kanit', sans-serif;
+	letter-spacing:2px ;
+}
+
+.list-group-item:hover{
+	box-shadow: 10px 15px 20px rgba(167, 162, 162, 0.4);
+
+
+  transform: translateY(-7px);
+}
+
+.list-group-item{
+	color: #000000;
+	
+}
+
+.list-group{
+	
+
+	font-family: 'Poppins', sans-serif;
+
+}
+
+
+
+
+#cause{
+	position: relative;
+	width: 90%;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+	grid-gap: 0 23px;
+	grid-template-rows: auto;
+	font-family: 'Poppins', sans-serif;
+	
+}
+
+#cause .box{
+	position: relative;
+	height: 350px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	
+
+}
+
+
+#cause .box:before{
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: black;
+	transform: skew(2deg,2deg);
+	z-index: -1;
+}
+
+#cause .box:nth-child(1):before{
+	background: linear-gradient(315deg, #ff0057, #e64a19);
+}
+
+#cause .box:nth-child(2):before{
+	background: linear-gradient(315deg, #89ff00, #00bcd4);
+}
+
+#cause .box:nth-child(3):before{
+	background: linear-gradient(315deg, #e91e63, #5d02ff);
+}
+
+#cause .box:nth-child(4):before{
+	background: linear-gradient(315deg, #ff0000, #ffc107);
+}
+
+#cause .box:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.05);
+
+}
+
+.content{
+	position: relative;
+	padding: 20px;
+	padding-top: 80px;
+	
+}
+.box .content h2{
+	position: absolute;
+	top: 10px;
+	right:20px;
+	margin: 0;
+	padding: 0;
+	font-size: 10em;
+	color: rgba(0, 0, 0, 0.05);
+	transition: 0.5s;
+	font-weight: bold;
+}
+
+.box:hover .content h2{
+	top:-40px;
+}
+
+.box .content h3{
+	margin: 0 0 10px;
+	padding: 0%;
+	
+	font-size: 22px;
+	font-weight:500;
+	color: black;
+
+}
+.box .content p{
+	margin: 0;
+	padding: 0;
+	color: black;
+	font-size: 16px;
+}  
+.box .content a{
+	position:relative;
+	margin: 10px 0 0;
+	padding: 10px 20px;
+	text-decoration: none;
+	border: 1px solid #000;
+	display:inline-block;
+	color: #000;
+	transition: 0.5s;
+	transform: translateY(-40px);
+	opacity:0;
+	visibility:hidden;
+
+}
+.box:hover .content a{
+	transform: translateY(0);
+	opacity:1;
+	visibility:visible;
+
+}
+
+.box .content a:hover{
+	color: #fff;
+	background-color: #000;
+}
+
+</style>
+		
+		<script language="javascript">
+			function check(form)
+			{
+				if(form.username.value == "" || form.password.value == "")
+				{
+					alert("Error Enter Password or Username")
+					return false;
+			
+				}
+				else
+				{
+					return true;
+				}
+			}
+			function reg()
+			{
+				alert("redirect")
+				location.ahref= "/register";
+			}
+			</script>
+			
+			
+			<style>
+			html,body{
+   				 height:100%;
+   				 width:100%;
+			}
+ 
+			.navbar{
+					background-color: aqua;
+					
+				}
+			</style>
+
+		<!--	<link rel="stylesheet" href="/static/style.css" type="text/css"> -->
+
+
+
+
+	  </head>
+
+	  <!-- --------------------------------NAVIGATION BAR----------------------------------------------------------------------   -->
+	<body style="height: 100%; width: 100%;">
+
+<!-- Navigation Bar -->
+
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbar sticky-top " role="navigation" style=" padding: 0.5% 0; font-size: 1.1em;">
+	<a class="navbar-brand" href="#" style="padding-left: 10px;">
+		<img class="img" src="/static/logo.jpg" width="40px" height="40px" class="d-inline-block align-top" alt="">
+	  </a>
+	 
+	<a class="navbar-brand" href="#">Child Depression Prediction</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+	  <ul class=" navbar-nav  ">
+		<li class="nav-item active " style="margin-left: 800px;">
+		  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item">
+			
+		  <a class="nav-link" href="#login" >Register</a>
+		
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="#login">Login</a>
+		</li>
+		
+	  </ul>
+	</div>
+  </nav>
+<!-- -----------------------------------BACKGROUNG FLEX --------------------------------------------------------   -->
+
+
+{% block body %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+
+
+<header> 
+<section >
+	<div class="hero" >
+		<img src="/static/bg10.jpg" alt="background" >
+		<span class="text1">
+		<h1 class="headline">GIVING VOICE<br> TO <br> VULNERABLE CHILDREN</h1>
+		</span>
+		<div class="getstart" style="padding-left: 40px; padding-top: 40px;">
+		<a href="#login"><button class="btn btn-outline-light get" type="button"> GET STARTED</button></a>
+		</div>
+		
+	</div>
+</section>
+
+<div class="scrolldown">
+	
+	<span></span>
+	<span></span>
+	<span></span>
+</div>
+
+</header>
+
+<div class="slider"></div>
+
+
+<!-- 
+<div id="home" style="background: url(https://wallpaperplay.com/walls/full/4/1/7/87897.jpg) no-repeat center center fixed;
+						display: table; height:80%; position: relative; width: 100%; background-size: cover;" >
+	
+	<div class="landing-text" style="display: table-cell; text-align: center; vertical-align: middle;">
+	<h1 style="font-size: 350%; font-weight: 800%;  ">Giving Voice to Vulnerable <br>Children</h1>
+	<a href="#login" class="btn btn-light " style="margin-top: 20px;">Get Started</a>
+	</div>
+</div>
+-->
+<!-- ----------------------------------------IMAGE CAROUSEL AND ABOUT------------------------------------------------------   -->
+
+<div class="padding" style="padding:50px 0">
+<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="width: 100%; padding-right: 50px;">
+				
+				<!-- Enter the Carosel -->
+				<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+					<div class="carousel-inner">
+					  <div class="carousel-item active" data-interval="2000">
+						<img src="/static/child1.jpg" class="d-block w-100" alt="...">
+					  </div>
+					  <div class="carousel-item" data-interval="2000">
+						<img src="/static/child2.jpg" class="d-block w-100" alt="...">
+					  </div>
+					  <div class="carousel-item" data-interval="2000">
+						<img src="/static/child3.jpg" class="d-block w-100" alt="...">
+					  </div>
+					</div>
+					<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+					  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					  <span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+					  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					  <span class="sr-only">Next</span>
+					</a>
+				  </div>
+			</div>
+			<div class="col-sm-6 text-center">
+				<h3 style="font-family: 'Bitter', serif;"> About Child Depression</h3>
+				<div class="abtchild">
+				<p class="lead"> Childhood anxiety and depression often go undiagnosed.
+					 If left untreated these conditions, collectively known as internalizing disorders,
+					  are associated with long-term negative outcomes including substance abuse and increased risk for suicide.</p>
+					 
+					  <p class="lead">Anxiety and depression can emerge in children as young as four years old,
+					   but symptoms are often overlooked until children can more clearly express their discomfort given the abstract emotions involved,
+					   and communicate their impairment with help-seeking adults.</p>
+					</div>
+			</div>
+		</div>
+</div>
+</div>
+
+<!-- -----------------------------------------CAUSES OF DEPRESSION -------------------------------------------------------   -->
+<div class="maincause">
+	<div class="container" id="causetitle">
+
+		<div class="row">
+			<h3 style="padding: 10px;  padding-bottom: 35px; font-family: 'Bitter', serif;"> Common Causes Of Depression</h3>
+		</div>
+	
+	</div>
+<div class="container" id="cause">
+	<div class="box" style="margin-bottom: 20px;">
+		<div class="content">
+			<h2>1</h2>
+			<h3>Physical Illness</h3>
+			<p>Physical illnesses such as diabetes,
+				 epilepsy, gastroenteritis or asthma may effect the 
+				 mental wellbeing of the child.</p>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk03roBhq3VqVZzy8uJFVa_W3LWTfMQ%3A1588691665922&ei=0YKxXsnzN5aZ4-EP08y3iA8&q=depression+due+to+Physical+Illness&oq=depression+due+to+Physical+Illness&gs_lcp=CgZwc3ktYWIQAzIECCMQJzICCAAyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB46BggAEAgQHjoHCAAQFBCHAlDv0kRYhYJFYOKGRWgAcAB4AIABigeIAfIukgEKMC4xOS41LTEuM5gBAKABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwiJoJ7TgZ3pAhWWzDgGHVPmDfEQ4dUDCAw&uact=5">Read More</a>
+		</div>
+	</div>
+
+	<div class="box">
+		<div class="content" style="padding-top: 90px;">
+			<h2>2</h2>
+			<h3>Stressful Life Events</h3>
+			<p>When children have witnessed harsh events at a young age, they remain in the mind for a long duration. Which may cause mental distress.</p>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk027g2SAR-zwMPKsNPI8Aqiwy7WOAQ%3A1588692798516&ei=PoexXtCMH5iZ4-EPraCw8AU&q=Depression+Due+to+Stressful+Life+Events&oq=Depression+Due+to+Stressful+Life+Events&gs_lcp=CgZwc3ktYWIQAzIICCEQFhAdEB4yCAghEBYQHRAeMggIIRAWEB0QHjoGCAAQBxAeOgIIADoECCMQJzoGCAAQBRAeOgcIIxCwAhAnOgQIABANOgYIABAWEB46BwgAEBQQhwI6BwgjELECECc6BAgAEAo6CAgAEA0QBRAeOggIABAIEA0QHjoHCCEQChCgAToECCEQFToFCCEQoAFQrc8YWLfqGWCB8BloAXAAeACAAY8CiAHDNZIBBjAuMzkuNJgBAKABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjQo6bvhZ3pAhWYzDgGHS0QDF4Q4dUDCAw&uact=5">Read More</a>
+		</div>
+	</div>
+
+	<div class="box">
+		<div class="content">
+			<h2>3</h2>
+			<h3>Environment</h3>
+			<p>The Environment in which the child is being raised plays an important role in the mental state of the child.</p>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk02UhwBlpbliTfB-7hJPzLUnKrRLCA%3A1588693223584&ei=54ixXvefI8Oe4-EPpey58AU&q=Depression+Due+to+Environment&oq=Depression+Due+to+Environment&gs_lcp=CgZwc3ktYWIQAzIECCMQJzIGCAAQFhAeMgYIABAWEB46AggAOgcIABAUEIcCUKPYAViJkwJg4ZQCaAFwAHgAgAGxAYgBuRCSAQQwLjE1mAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwi3r_65h53pAhVDzzgGHSV2Dl4Q4dUDCAw&uact=5">Read More</a>
+		</div>
+	</div>
+
+	<div class="box">
+		<div class="content">
+			<h2>4</h2>
+			<h3>Family History</h3>
+			<p>Depression is a hereditary illness. If any of the family relatives are efffected by it, there are chances that the child will get it too.</p>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk01Zi2FCHMeOYAc4Gw7R2mVk-9mCtQ%3A1588693260250&ei=DImxXvzrDq-W4-EPzIWzkAo&q=Depression+Due+to+Family+History&oq=Depression+Due+to+Family+History&gs_lcp=CgZwc3ktYWIQAzIICCEQFhAdEB46BAgjECc6BggAEAgQHjoGCAAQFhAeOgIIADoHCAAQFBCHAjoFCCEQoAFQypwBWJDCAWCnygFoAHAAeACAAccBiAHHFZIBBDAuMTeYAQCgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwj8obzLh53pAhUvyzgGHczCDKIQ4dUDCAw&uact=5">Read More</a>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<!-- ----------------------------------------SCROLL IMAGE ---------------------------------------------------   -->
+
+<br>
+<br>
+<div id="fix" style="background: url(/static/scrollimg1.png) no-repeat center center fixed;
+						display: table; height: 60%; position: relative; width: 100%; background-size: cover;" >
+
+						
+						<br>
+						<br>
+						<BR>
+						<BR>		
+						<center><h4 style="color: #fff; font-size: 150%; font-weight: 900%;">NUMBER OF CHILDREN CURRENTLY SUFFERING FROM DEPRESSION WORLDWIDE</h4></center>
+						<br>
+						<center>	<div class="num" style="color: #fff; font-size: 250%; font-weight: 1000%;">8652365</div></center>
+
+						</div>
+
+
+<!-- ----------------------------Symptoms of Depression ---------------------------------------   -->
+<div class="container-fluid text-center" style="width: 100%;  padding:5% 5% 5% 5%; ">
+	<div class="row">
+		<p style="padding-bottom:25px ;"><h3 style="font-family: 'Bitter', serif;">Signs and Symptoms of Depression</h3></p>
+	</div>
+	<div class="row" style="padding: 3% 2% 3%;">
+	<div class ="col-sm-4">
+		<ul class="list-group list-group-flush">
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk03iq1OktCROa-vn4_NVev0FppxZkg%3A1588480531495&ei=E0quXs7hHZeP4-EPhtSVyA4&q=Increased+sensitivity+to+rejection&oq=Increased+sensitivity+to+rejection&gs_lcp=CgZwc3ktYWIQAzICCAA6BAgAEEdQn8QNWJ_EDWCbzw1oAHACeACAAYgCiAGIApIBAzItMZgBAKABAqABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwiOt7-O75bpAhWXxzgGHQZqBekQ4dUDCAw&uact=5"><li class="list-group-item" >Increased sensitivity to rejection</li></a>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk02dMU9loGgK5ompkO9PzGaOweYQng%3A1588480755600&ei=80quXqquJNCU4-EPwdew8AQ&q=social+withdrawal&oq=Socail+With&gs_lcp=CgZwc3ktYWIQARgAMgQIABAKMgQIABAKMgQIABAKMgQIABAKMgQIABAKMgQIABAKMgQIABAKMgQIABAKMgQIABAKMgQIABAKOgQIABBHOgQIIxAnOgQIABBDOgUIABCRAjoFCAAQgwE6AggAOgcIABAUEIcCOgwIABAUEIcCEEYQ-QFQkokXWPmlF2DHtRdoAHABeACAAeUBiAHQDpIBBTEuNi40mAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab"><li class="list-group-item">Social withdrawal</li></a>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk02S2ChBjigM1-0kCZvrDcLkj5QyGQ%3A1588481140468&ei=dEyuXqySHMSU4-EPxeG78A0&q=Irritability&oq=Irritability&gs_lcp=CgZwc3ktYWIQAzIFCAAQkQIyBQgAEJECMgIIADIHCAAQFBCHAjICCAAyAggAMgIIADICCAAyAggAMgIIADoECAAQR1DH3AFYx9wBYK7kAWgAcAJ4AIABwAGIAcABkgEDMC4xmAEAoAECoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwisnPCw8ZbpAhVEyjgGHcXwDt4Q4dUDCAw&uact=5"><li class="list-group-item">Irritability</li></a>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk02Kv0LVki_Ra_J0bj0JsXOe7aafWg%3A1588481170906&ei=kkyuXseAN_Gc4-EP98qGgAI&q=Anger&oq=Anger&gs_lcp=CgZwc3ktYWIQAzIFCAAQkQIyBQgAEJECMgIIADICCAAyAggAMgIIADICCAAyBAgAEEMyAggAMgIIADoECAAQR1Ch3AFYodwBYLjhAWgAcAJ4AIAByAGIAcgBkgEDMi0xmAEAoAECoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwjHkbK_8ZbpAhVxzjgGHXelASAQ4dUDCAw&uact=5"><li class="list-group-item">Anger</li></a>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk010zfBI5A9Lz1aVJHE1FZuBQ0aXNQ%3A1588481226299&ei=ykyuXp71EZaK4-EPjsqfsAU&q=Continuous+feeling+of+sadness&oq=Continuous+feeling+of+sadness&gs_lcp=CgZwc3ktYWIQAzoECCMQJ1CwLViwLWDQQ2gAcAB4AIABgwGIAfYCkgEDMC4zmAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwiegufZ8ZbpAhUWxTgGHQ7lB1YQ4dUDCAw&uact=5"><li class="list-group-item">Continuous feeling of sadness </li></a>
+			
+			
+		  </ul>
+	</div>
+	<div class ="col-sm-4">
+		<ul class="list-group list-group-flush">
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk024iE8jN_aSxojSpKgW5s31nS1nEA%3A1588481236117&ei=1EyuXtbgBsiZ4-EPq9-r4Ag&q=Difficulty+concentrating&oq=Difficulty+concentrating&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BAgjECc6BggAEBYQHlCYnAVYmJwFYN2hBWgAcAB4AIABnQGIAbQDkgEDMC4zmAEAoAECoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwjWmr7e8ZbpAhXIzDgGHavvCowQ4dUDCAw&uact=5"><li class="list-group-item">Difficulty concentrating</li></a>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk036gf2p1B_TfpVQKT6V8qYlaePXlw%3A1588481323296&ei=K02uXoDjEYmR4-EPy9Sf-AM&q=Changes+in+appetite&oq=Changes+in+appetite&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yCAgAEBYQChAeMgYIABAWEB4yBggAEBYQHjoECAAQR1DtuwFY7bsBYKTBAWgAcAJ4AIABjgKIAY4CkgEDMi0xmAEAoAECoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwjApIeI8pbpAhWJyDgGHUvqBz8Q4dUDCAw&uact=5"><li class="list-group-item">Changes in appetite</li></a>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk02yNFe46kvxjIGjHImW7KBTaKC6Dg%3A1588481349418&ei=RU2uXvuTGe6X4-EP6fSAkAo&q=Changes+in+sleep&oq=Changes+in+sleep&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BAgAEEdQ7a8BWO2vAWDRtAFoAHACeACAAcABiAHAAZIBAzAuMZgBAKABAqABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwi7ysGU8pbpAhXuyzgGHWk6AKIQ4dUDCAw&uact=5"><li class="list-group-item">Changes in sleep</li></a>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk03sDCspu7-JyrkvkrKaKMBwhioAEA%3A1588481373859&ei=XU2uXoSBNOaQ4-EP66-PsAg&q=Vocal+outbursts&oq=Vocal+outbursts&gs_lcp=CgZwc3ktYWIQAzIECAAQRzIECAAQRzIECAAQRzIECAAQRzIECAAQRzIECAAQRzIECAAQRzIECAAQR1C4oAFYuKABYMSkAWgAcAJ4AIABAIgBAJIBAJgBAKABAqABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjEo5Wg8pbpAhVmyDgGHevXA4YQ4dUDCAw&uact=5"><li class="list-group-item">Vocal outbursts</li></a>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk034ltPin3fFsHLVgVnKYlYR3Ns7jQ%3A1588481396137&ei=dE2uXsWBCPWQ4-EP9siv-Ao&q=Crying&oq=Crying&gs_lcp=CgZwc3ktYWIQAzIFCAAQkQIyBQgAEJECMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BAgAEEdQwKABWMCgAWCxpQFoAHACeACAAcgBiAHIAZIBAzItMZgBAKABAqABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjFi-Wq8pbpAhV1yDgGHXbkC68Q4dUDCAw&uact=5"><li class="list-group-item">Crying</li></a>
+			
+		  </ul>
+	</div>
+	<div class ="col-sm-4">
+		<ul class="list-group list-group-flush">
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk00So73zZX2E6BcgGihPW_1H3Hv6hA%3A1588481418398&ei=ik2uXt7vF8Wd4-EP79i8kAU&q=Fatigue+and+low+energy&oq=Fatigue+and+low+energy&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeOgQIABBHUIq1AViKtQFgw7oBaABwAngAgAGRAYgBkQGSAQMwLjGYAQCgAQKgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwje3LO18pbpAhXFzjgGHW8sD1IQ4dUDCAw&uact=5"><li class="list-group-item">Fatigue and low energy</li></a>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk03fQzBByyUD8rNyzWgdPYECnobUXg%3A1588481443931&ei=o02uXpvBOOSf4-EP3Mi7kA4&q=Physical+complaints&oq=Physical+complaints&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB46BAgAEEdQhcIBWIXCAWDexwFoAHABeACAAbgBiAG4AZIBAzAuMZgBAKABAqABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjbnsrB8pbpAhXkzzgGHVzkDuIQ4dUDCAw&uact=5"><li class="list-group-item">Physical complaints</li></a>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk00S8nysh_ZVNhuDmH_7N5_46to-WA%3A1588481470975&ei=vk2uXoqOO8SE4-EPo_uRmAY&q=Feelings+of+worthlessness+or+guilt&oq=Feelings+of+worthlessness+or+guilt&gs_lcp=CgZwc3ktYWIQAzICCAAyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoECAAQR1CzrAFYs6wBYJmyAWgAcAJ4AIABeogBepIBAzAuMZgBAKABAqABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwiK5bzO8pbpAhVEwjgGHaN9BGMQ4dUDCAw&uact=5"><li class="list-group-item">Feelings of worthlessness or guilt</li></a>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk03stshuyQycbxDglKz6qbWNqYzL_g%3A1588481494846&ei=1k2uXoiuM_WQ4-EP9siv-Ao&q=Impaired+thinking+or+concentration&oq=Impaired+thinking+or+concentration&gs_lcp=CgZwc3ktYWIQAzIECCMQJzIGCAAQFhAeMgYIABAWEB46BggAEAgQHlD12AFY9dgBYITeAWgAcAB4AIABhgGIAf8BkgEDMC4ymAEAoAECoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwiI8e3Z8pbpAhV1yDgGHXbkC68Q4dUDCAw&uact=5"><li class="list-group-item">Impaired thinking or concentration</li></a>
+			<a href="https://www.google.com/search?rlz=1C1CHZL_enIN781IN781&sxsrf=ALeKk01bcKn-5aJiG7eAoOVIcFvqsbCmOg%3A1588481524372&ei=9E2uXp2mFv2E4-EPz6STkAs&q=Thoughts+of+death+or+suicide&oq=Thoughts+of+death+or+suicide&gs_lcp=CgZwc3ktYWIQAzoECAAQR1CwlQFYsJUBYN2XAWgAcAJ4AIABhQGIAYUBkgEDMC4xmAEAoAECoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwid8Pfn8pbpAhV9wjgGHU_SBLIQ4dUDCAw&uact=5"><li class="list-group-item">Thoughts of death or suicide</li></a>
+		  </ul>
+	</div>
+</div>
+</div>
+
+<!-- ----------------------------------------LOGIN PAGE ---------------------------------------------------   -->
+
+<div id="fixed" name="login" style="background: url(/static/scrollimg2.jpg) no-repeat center center fixed;
+						display: table; height: 50%; position: relative; width: 100%; background-size: cover;" >
+
+<div class="padding" style="padding:50px 0">
+<div class="container">
+	<div class="row">
+<div class="container-fluid">
+	<div class="row justify-content-center">
+		<div class="col-sm-6" style="width: 100%;">
+				<p style="font-size: 350%; font-weight: 900%; color: #fff;">Check the Mental Health of your child in Just 5 mins</p>
+				<br>
+				<br>
+			<!--	<p style="font-size: 150%; font-weight: 800%; color: #fff;"> Sign up for Free</p> -->
+		</div>
+		<div class="col-12 col-sm-6 col-md-4 " style="margin-left: 100px;">
+			<a name="login">
+				<div class="form-container" style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0px 0px 10px 0px;">
+			<form  action="/login" method="POST" >
+				<div class="form-group">
+					<p><h4><b><center> Log In</center></b></h4></p>
+				  <label for="exampleInputEmail1">User Name</label>
+				  <input type="text" class="form-control" name="username" size=25 aria-describedby="emailHelp">
+				 <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>  -->
+				</div>
+				<div class="form-group">
+				  <label for="exampleInputPassword1">Password</label>
+				  <input type="password" size=25 class="form-control" name="password" id="exampleInputPassword1">
+				</div>
+		<!--	<div class="form-group form-check">
+				  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+				  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+				</div>
+				-->	
+				<div class="row">
+					<div class="col-sm-6">
+						<div  style="padding-left: 10px;">
+						<button type="reset" class="btn btn-outline-dark" style=" width:120px;border-radius:10px; height:40px; ">Reset</button>
+					</div>
+				</div>
+					<div class="col-sm-6">
+						<button type="submit" class="btn btn-primary" style=" width:120px;border-radius:10px; height:40px;" onclick="return check(this.form)" value="Login">Submit</button>
+					</div>
+				</div>
+
+				<!--
+				<button type="reset" class="btn btn-outline-dark">Reset</button>
+				<button type="submit" class="btn btn-primary" onclick="return check(this.form)" value="Login">Submit</button>
+-->
+			</form>
+
+			<form action="/registerpage" method="POST">
+				<p style="font-size: small"> <center>Not a member?<button type="submit" class="btn btn-light btn-sm" value="Register">Register</button></center></p>
+				</form>
+			</div>
+			</a>
+
+
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ----------------------------------------- FOOTER --------------------------------------------------------   -->
+
+<footer class="container-fluid text-center" style="width: 100%; background-color: #23415c ; padding:2% 5% 0% 5%; color: #fff; ">
+	<div class="row">
+	<div class ="col-sm-4">
+		<h3> Contact Us</h3>
+		<br>
+		<ul>
+			<li style="text-align: justify;"> <span > RNS Institute of Technology,
+				 Dr. Vishnuvardhana Road, Channasandra, RR Nagar,Bengaluru - 560 098.
+				 </span></li>
+			<li style="text-align: justify;"> <span >+91 9906543372</span></li>
+			<li style="text-align: justify;" > <span >vtu.rnsit@gmail.com</span></li>
+		  </ul>
+	</div>
+	<div class ="col-sm-4">
+		</div>
+	<div class ="col-sm-4">
+		<h3>Have Questions?</h3>
+		<br>
+		<h6 style="text-align: left;">Send a message</h6>
+		<form>
+		<div class="input-group">
+			<textarea class="form-control" aria-label="With textarea" placeholder="Enter text here"></textarea>
+
+		  </div>
+		 
+		  <button type="reset" class="btn btn-primary btn-sm" style="margin-left:320px;">Submit</button> 
+		</form>	
+		</div>
+
+</div>
+</footer>
+
+
+
+
+
+<!--  ----------------------------------------ORIGINAL LOGIN FORM CODE---------------------------------------------------------                                     
+
+<form action="/login" method="POST">
+<table width="20%" bgcolor="FFFFFF" align="center">
+
+<tr>
+<td colspan=2><center><font size=6><b>Login</b></font></center></td>
+</tr>
+
+<tr>
+<td>Username:</td>
+<td><input type="text" size=25 name="username"></td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type="Password" size=25 name="password"></td>
+</tr>
+
+<tr>
+<td><input type="Reset" ></td>
+<td><input type="submit" onclick="return check(this.form)" value="Login"></td>
+
+</tr>
+
+</table>
+</form>
+<form action="/registerpage" method="POST">
+<table width="20%" bgcolor="FFFFFF" align="center">
+<tr>
+<td><input type="submit" value="Register"></td>
+
+</tr>
+</table>
+</form>
+  -->
+
+{% endif %}
+{% endblock %}
+
+<!--  ------------------------- Script for Counter ------------------------------->
+<script type="text/javascript">
+	$(".num").counterUp({delay:5,time:2000});
+
+ </script>
+<!-- --------------------------  Main animations ----------------------------------------->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
+
+
+<script>
+
+const hero = document.querySelector(".hero");
+const slider = document.querySelector(".slider");
+const headline = document.querySelector(".headline");
+const getstart = document.querySelector(".getstart");
+
+const tl = new TimelineMax();
+
+tl.fromTo(hero,1, {height:"0%"},{height:"80%", ease: Power2.easeInOut})
+.fromTo(hero,1.2, {width:'100%'}, {width:"80%", ease: Power2.easeInOut })
+.fromTo(slider, 1.2, {x:"-100%"}, {x:"0%", ease: Power2.easeInOut}, "-=1.2")
+.fromTo(headline,0.5,{opacity:0, x:30}, {opacity:1, x:0}, "-=0.5")
+.fromTo(getstart,2,{opacity:0, x:30}, {opacity:1, x:0, ease: Power2.easeInOut},"-=0.5" );
+
+</script>
+<!----------------------------------------Bootstrap script --------------------------------------------------------------->
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+

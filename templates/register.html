@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Used for Social Media Tags-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://drive.google.com/file/d/1-ADGXAHQ4oObf6BXTWFCJQC3y60CEBUz/view?usp=sharing" type="text/css">
+
+<!-- Jquery CDN-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Counter Up CDNJS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+<!-- Waypoints CDNJS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+<!-- Font Awesome Kit -->
+<script src="https://kit.fontawesome.com/0d6d81eac4.js" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+
+<title>Register</title>
+
+	<!-- add icon link -->
+	<link rel = "icon" href =  
+	"/static/logo.jpg" 
+			type = "image/x-icon"> 
+
+<!-- <link rel="stylesheet" href="/static/style.css" type="text/css"> -->
+<script language="javascript">
+function check(form)
+{
+	if(form.name.value == "" )
+	{
+		alert("Error Enter Name")
+		return false;
+
+	}
+	if(form.username.value == "" )
+	{
+		alert("Error Enter Username")
+		return false;
+ 
+	}
+	if(form.password.value == "" )
+	{
+		alert("Error Enter Password")
+		return false;
+
+	}
+	var email = form.emailid.value;
+	atpos = email.indexOf("@");
+	dotpos = email.lastIndexOf(".");
+	if (email == "" || atpos < 1 || ( dotpos - atpos < 2 ))
+	{
+	    alert("Please enter correct email ID")
+	    return false;
+	}
+	if( form.mobile.value == "" || isNaN( form.mobile.value) || form.mobile.value.length != 10 )
+    {
+        alert( "Please provide a Mobile No in the format 123 and 10 Digit." );
+        return false;
+    }
+
+
+	else
+	{
+		return true;
+	}
+}
+
+</script>
+
+</head>
+<body > 
+
+	<!-- Navigation Bar -->
+
+	<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbar sticky-top " role="navigation" style=" padding: 0.5% 0; font-size: 1.1em;">
+		<a class="navbar-brand" href="#" style="padding-left: 10px;">
+			<img class="img" src="/static/logo.jpg" width="40px" height="40px" class="d-inline-block align-top" alt="">
+		  </a>
+		 
+		<a class="navbar-brand" href="#">Child Depression Prediction</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+		  <ul class=" navbar-nav  ">
+			<li class="nav-item active " style="margin-left: 870px;">
+			  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			</li>
+		
+			<li class="nav-item">
+			  <a class="nav-link" href="#contact">Contact</a>
+			</li>
+			
+		  </ul>
+		</div>
+	  </nav>
+	
+{% block body %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+
+
+
+<!-- ****************************************************************-->
+
+<div class="backimage" style="background: url(/static/registerbg.png); background-position: right ;
+background-repeat: no-repeat;
+background-size: cover;">
+
+</br>
+</br>
+
+
+<div class="container">
+
+	<div class="row" id="registrationform" style="border:1px solid #ddd; margin:40px 0; box-shadow: 0px 0px 20px 0px; background-color: #fff;">
+		<div class="col-md-8" style="background: url(/static/scrollimg2.jpg) no-repeat center center fixed;
+									background-size: cover;  position: relative; background-position: left;">
+
+		<div class="imglocate" style="padding: 175px 0px 0 100px;">
+		<img src="/static/healthcare.jpg" style="text-align: center; height: 80%; width: 80%; opacity: 0.90;  box-shadow: 0px 0px 10px 0px;" class="center">
+		</div>
+		</div>
+
+		<div class="col-md-4" style="padding: 40px 20px;">
+			<form  action="/register" method="POST">
+				<div class="form-group">
+					<p><h4 style="font-family: 'Bitter', serif; letter-spacing: 2px; font-weight: 400;"><b><center> REGISTRATION FORM</center></b></h4></p>
+					<br>
+					<label for="name">Name</label>
+					<input type="text" class="form-control form-control-sm" id="name" name="name" style="background: none; border: none; outline: none; border-bottom:1px solid #ddd; padding: 0;">
+				  </div>
+				  <div class="form-group">
+					<label for="username">UserName</label>
+					<input type="text" class="form-control form-control-sm" id="username" name="username"  style="background: none; border: none; outline: none; border-bottom:1px solid #ddd; padding: 0;">
+				  </div>
+				  <div class="form-group">
+					<label for="exampleInputPassword1">Password</label>
+					<input type="password" class="form-control form-control-sm" id="exampleInputPassword1" name="password"  style="background: none; border: none; outline: none; border-bottom:1px solid #ddd; padding: 0;">
+				  </div>
+				<div class="form-group">
+				  <label for="exampleInputEmail1">Email address</label>
+				  <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" name="emailid"  style="background: none; border: none; outline: none; border-bottom:1px solid #ddd; padding: 0;"> 
+				</div>
+				<div class="form-group">
+					<label for="number">Mobile No.</label>
+					<input type="text" class="form-control form-control-sm" id="number" name="mobile"  style="background: none; border: none; outline: none; border-bottom:1px solid #ddd; padding: 0;" >
+				  </div>
+				<br>
+				  <button type="reset" class="btn btn-outline-dark" style=" width:150px;border-radius:50px; height:40px; margin-left:20px;">Reset</button>
+				  <button type="submit" class="btn btn-primary" style="width:150px;border-radius:50px; height:40px;" onclick="return check(this.form)" value="Register">Register</button>
+				
+			  </form>
+			  <form action="/loginpage" method="POST" style="padding: 10px 120px 5px;">
+				<button type="submit" class="btn btn-light btn-sm" value="Login"  style="width:100px;border-radius:50px; height:30px;">Go Back</button>
+			</form>
+
+
+		</div>
+
+
+
+	</div>
+</div>
+
+<br>
+<br>
+</div>
+<!-- ****************************************************************************************8-->
+<!-- ---------------------------------Original Registration Form------------------------------
+</br>
+</br>
+
+<form action="/register" method="POST">
+<table width="20%" bgcolor="FFFFFF" align="center">
+
+<tr>
+<td colspan=2><center><font size=6><b>Registration</b></font></center></td>
+</tr>
+<tr>
+<td>Name:</td>
+<td><input type="text" size=25 name="name"></td>
+</tr>
+<tr>
+<td>Username:</td>
+<td><input type="text" size=25 name="username"></td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type="Password" size=25 name="password"></td>
+</tr>
+
+<tr>
+<td>Email ID:</td>
+<td><input type="text" size=25 name="emailid"></td>
+</tr>
+
+<tr>
+<td>Mobile No:</td>
+<td><input type="text" size=25 name="mobile"></td>
+</tr>
+
+<tr>
+<td><input type="Reset" ></td>
+<td><input type="submit" onclick="return check(this.form)" value="Register"></td>
+
+</tr>
+
+</table>
+</form>
+<form action="/loginpage" method="POST">
+<table width="20%" bgcolor="FFFFFF" align="center">
+<tr>
+<td><input type="submit" value="Login"></td>
+
+</tr>
+
+</table>
+</form>
+{% endif %}
+{% endblock %}
+-->
+<!-- ----------------------------------------- FOOTER --------------------------------------------------------   -->
+
+<footer class="container-fluid text-center" style="width: 100%; background-color: #23415c ; padding:2% 5% 0% 5%; color: #fff; ">
+	<div class="row">
+	<div class ="col-sm-4">
+		<a name="contact">
+		<h3> Contact Us</h3>
+		<br>
+		<ul>
+			<li style="text-align: justify;"> <span > RNS Institute of Technology,
+				 Dr. Vishnuvardhana Road, Channasandra, RR Nagar,Bengaluru - 560 098.
+				 </span></li>
+			<li style="text-align: justify;"> <span >+91 9906543372</span></li>
+			<li style="text-align: justify;" > <span >vtu.rnsit@gmail.com</span></li>
+		  </ul>
+		</a>
+	</div>
+	<div class ="col-sm-4">
+		</div>
+	<div class ="col-sm-4">
+		<h3>Have Questions?</h3>
+		<br>
+		<h6 style="text-align: left;">Send a message</h6>
+		<form>
+		<div class="input-group">
+			<textarea class="form-control" aria-label="With textarea" placeholder="Enter text here"></textarea>
+
+		  </div>
+		 
+		  <button type="reset" class="btn btn-primary btn-sm" style="margin-left:320px;">Submit</button> 
+		</form>	
+		</div>
+
+</div>
+</footer>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
